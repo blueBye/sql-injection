@@ -7,53 +7,53 @@
     shell: '/bin/bash'
     home: '/home/{{ username }}'
 
-# - lineinfile:
-#     path: /etc/hosts
-#     line: 37.152.185.92 registry-1.docker.io download.docker.com k8s.gcr.io dl.k8s.io storage.googleapis.com apt.kubernetes.io packages.cloud.google.com gcr.io registry.gitlab.com gitlab.com charts.gitlab.io kubernetes-charts.storage.googleapis.com production.cloudflare.docker.com k8s.io docker.elastic.co docker-auth.elastic.co docker-auth.elastic.co d2iks1dkcwqcbx.cloudfront.net
-#     state: present
+- lineinfile:
+    path: /etc/hosts
+    line: 37.152.185.92 registry-1.docker.io download.docker.com k8s.gcr.io dl.k8s.io storage.googleapis.com apt.kubernetes.io packages.cloud.google.com gcr.io registry.gitlab.com gitlab.com charts.gitlab.io kubernetes-charts.storage.googleapis.com production.cloudflare.docker.com k8s.io docker.elastic.co docker-auth.elastic.co docker-auth.elastic.co d2iks1dkcwqcbx.cloudfront.net
+    state: present
 
-# - name: install docker packages
-#   apt:
-#     name: '{{ docker_required_packages }}'
-#     state: latest
-#     update_cache: yes
+- name: install docker packages
+  apt:
+    name: '{{ docker_required_packages }}'
+    state: latest
+    update_cache: yes
   
-# - name: add docker's official GPG key
-#   apt_key:
-#     url: '{{ docker_gpg_url }}'
-#     state: present
+- name: add docker's official GPG key
+  apt_key:
+    url: '{{ docker_gpg_url }}'
+    state: present
       
-# - name: set up the stable repository
-#   apt_repository:
-#     repo: '{{ docker_repo }}'
-#     state: present
-#     update_cache: yes
+- name: set up the stable repository
+  apt_repository:
+    repo: '{{ docker_repo }}'
+    state: present
+    update_cache: yes
   
-# - name: update apt packages
-#   apt:
-#     update_cache: yes
+- name: update apt packages
+  apt:
+    update_cache: yes
   
-# - name: install docker
-#   apt:
-#     name: '{{ docker_packges }}' 
-#     state: latest 
-#     update_cache: yes
+- name: install docker
+  apt:
+    name: '{{ docker_packges }}' 
+    state: latest 
+    update_cache: yes
 
-# - name: install python docker module
-#   pip:
-#     name: docker
+- name: install python docker module
+  pip:
+    name: docker
 
-# - name: add user to docker group
-#   user:
-#     name: '{{ username }}'
-#     groups: 'docker'
-#     append: yes
+- name: add user to docker group
+  user:
+    name: '{{ username }}'
+    groups: 'docker'
+    append: yes
 
-# - name: install docker compose
-#   get_url:
-#     url: '{{ docker_compose_url }}'
-#     dest: '/usr/local/bin/docker-compose'
-#     mode: 'u+x,g+x,o+x'
+- name: install docker compose
+  get_url:
+    url: '{{ docker_compose_url }}'
+    dest: '/usr/local/bin/docker-compose'
+    mode: 'u+x,g+x,o+x'
 
 - name: install unzip
   apt: 
@@ -68,7 +68,7 @@
     mode: '777'
     copy: true
 
-# - name: installing webservice
-#   shell:
-#     cmd: docker-compose up
-#     chdir: '/home/{{ username }}/Labsetup/Labsetup'
+- name: installing webservice
+  shell:
+    cmd: docker-compose up
+    chdir: '/home/{{ username }}/Labsetup/Labsetup'
