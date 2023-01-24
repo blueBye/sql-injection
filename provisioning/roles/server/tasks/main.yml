@@ -65,10 +65,11 @@
 - name: unzip
   unarchive:
     src: 'files/Labsetup.zip'
-    dest: '/home/{{ username }}/Labsetup'
-    copy: true
+    dest: '/home/{{ username }}/'
     owner: trainee
-    mode: '774'
+    mode: '777'
+    copy: true
+    # remote_src: yes
 
 # - name: installing webservice
 #   shell:
