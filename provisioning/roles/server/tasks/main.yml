@@ -56,8 +56,9 @@
 #     mode: 'u+x,g+x,o+x'
 
 - name: install unzip
-  apt: unzip
-  state: latest
+  apt: 
+    name: unzip
+    state: latest
 
 - name: unzip
   unarchive:
