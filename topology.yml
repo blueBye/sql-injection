@@ -1,0 +1,32 @@
+name: kypo-crp-demo-training
+
+hosts:
+  - name: server
+    base_box: 
+      image: ubuntu-focal-x86_64
+      man_user: ubuntu
+    flavor: standard.small
+
+routers:
+  - name: router
+    base_box:
+      image: debian-9-x86_64
+      man_user: debian
+    flavor: standard.small
+
+networks:
+  - name: server-switch
+    cidr: 192.168.20.0/24
+    accessible_by_user: False
+
+net_mappings:
+    - host: server
+      network: server-switch
+      ip: 192.168.20.5
+
+router_mappings:
+    - router: router
+      network: server-switch
+      ip: 192.168.20.1
+
+groups: []
