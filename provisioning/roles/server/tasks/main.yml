@@ -71,4 +71,4 @@
 - name: installing webservice
   shell:
     cmd: docker-compose up
-    chdir: '/home/{{ username }}/Labsetup/Labsetup'
+    chdir: '/home/{{ username }}/Labsetup'
