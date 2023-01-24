@@ -20,14 +20,25 @@
   become_user: root
 
   tasks:
-      - include_role:
-            name: kypo-user-access
-        vars:
-            kypo_user_access_username: '{{ user }}'
-            kypo_user_access_password: 'kypo'
-        with_items:
-            - kypo
-            - root
-        loop_control:
-            loop_var: user
+  - include_role:
+      name: kypo-user-access
+    vars:
+      kypo_user_access_username: '{{ user }}'
+      kypo_user_access_password: kypo
+    with_items:
+      - kypo
+      - root
+    loop_control:
+      loop_var: user
 
+- name: Setting up Lab
+  hosts:
+    - server
+  become: yes
+  tasks:
+    - apt:
+        name: unzip
+        state: latest
+    
+    - include_role:
+        name: "{{ inventory_hostname }}"
