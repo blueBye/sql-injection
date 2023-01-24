@@ -55,17 +55,20 @@
 #     dest: '/usr/local/bin/docker-compose'
 #     mode: 'u+x,g+x,o+x'
 
-- name: copy lab setup files
-  copy:
-    owner: trainee
-    mode: '777'
-    dest: '/home/{{ username }}/Labsetup.zip'
-    src: 'files/Labsetup.zip'
+# - name: copy lab setup files
+#   copy:
+#     owner: trainee
+#     mode: '777'
+#     dest: '/home/{{ username }}/Labsetup.zip'
+#     src: 'files/Labsetup.zip'
 
 - name: unzip
   unarchive:
-    src: '/home/{{ username }}/Labsetup.zip'
+    src: 'files/Labsetup.zip'
     dest: '/home/{{ username }}/Labsetup'
+    copy: true
+    owner: trainee
+    mode: '774'
 
 # - name: installing webservice
 #   shell:
