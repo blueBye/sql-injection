@@ -16,7 +16,7 @@
 
 - name: install desktop manager
   apt:
-    name: slime
+    name: slim
     state: latest
 
 - name: install desktop
