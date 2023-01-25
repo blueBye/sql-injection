@@ -3,7 +3,7 @@ name: sql-injection-training
 hosts:
   - name: server
     base_box: 
-      image: ubuntu-focal-x86_64
+      image: ubuntu-desktop-20
       man_user: ubuntu
     flavor: standard.small
 

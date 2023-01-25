@@ -35,19 +35,19 @@
     cache_valid_time: 3600
     force_apt_get: true
 
-- name: install display manager
-  apt:
-    name: slim
-    state: latest
+# - name: install display manager
+#   apt:
+#     name: slim
+#     state: latest
 
-- name: install desktop
-  apt:
-    name: ubuntu-desktop
-    state: latest
+# - name: install desktop
+#   apt:
+#     name: ubuntu-desktop
+#     state: latest
 
-- name: reboot
-  reboot:
-    reboot_timeout: 120
+# - name: reboot
+#   reboot:
+#     reboot_timeout: 120
 
 # - name: install docker packages
 #   apt:
