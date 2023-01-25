@@ -103,17 +103,17 @@
 #     name: unzip
 #     state: latest
 
-# - name: unzip
-#   unarchive:
-#     src: 'files/Labsetup.zip'
-#     dest: '/home/{{ username }}/'
-#     owner: trainee
-#     mode: '777'
-#     copy: true
+- name: unzip
+  unarchive:
+    src: 'files/Labsetup.zip'
+    dest: '/home/{{ username }}/'
+    owner: trainee
+    mode: '777'
+    copy: true
 
-# - name: installing webservice
-#   shell:
-#     cmd: docker-compose up
-#     chdir: '/home/{{ username }}/Labsetup'
-#   async: 1200
-#   poll: 0
+- name: installing webservice
+  shell:
+    cmd: docker-compose up
+    chdir: '/home/{{ username }}/Labsetup'
+  async: 120
+  poll: 0
