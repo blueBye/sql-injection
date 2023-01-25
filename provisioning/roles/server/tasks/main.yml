@@ -1,12 +1,12 @@
 ---
-- name: create account
-  user:
-    name: '{{ username }}'
-    groups: 'sudo'
-    append: yes
-    password: $6$IMYQ5IgaoSz7ZJaR$1aTtxoglk8.dYTPKa/Wt2/YLz2qXv/z18jV.W1KtUEZH/TekA7ENvouMgufSNMqtSNCHNouhLCzk2313o4PZB1
-    shell: '/bin/bash'
-    home: '/home/{{ username }}'
+# - name: create account
+#   user:
+#     name: '{{ username }}'
+#     groups: 'sudo'
+#     append: yes
+#     password: $6$IMYQ5IgaoSz7ZJaR$1aTtxoglk8.dYTPKa/Wt2/YLz2qXv/z18jV.W1KtUEZH/TekA7ENvouMgufSNMqtSNCHNouhLCzk2313o4PZB1
+#     shell: '/bin/bash'
+#     home: '/home/{{ username }}'
 
 - name: add proxy
   lineinfile:
@@ -98,10 +98,10 @@
 #     line: 10.9.0.5 www.seed-server.com
 #     state: present
 
-- name: install unzip
-  apt: 
-    name: unzip
-    state: latest
+# - name: install unzip
+#   apt: 
+#     name: unzip
+#     state: latest
 
 # - name: unzip
 #   unarchive:
