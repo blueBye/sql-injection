@@ -78,4 +78,5 @@
   shell:
     cmd: docker-compose up
     chdir: '/home/{{ username }}/Labsetup'
-    async: 0
+    async: 30
+    poll: 0
