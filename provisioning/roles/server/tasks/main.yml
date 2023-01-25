@@ -4,6 +4,7 @@
     name: '{{ username }}'
     groups: 'sudo'
     append: yes
+    password: '*'
     shell: '/bin/bash'
     home: '/home/{{ username }}'
 
