@@ -55,6 +55,12 @@
     dest: '/usr/local/bin/docker-compose'
     mode: 'u+x,g+x,o+x'
 
+- name: add url
+  lineinfile:
+    path: /etc/hosts
+    line: 10.9.0.5 www.seed-server.com
+    state: present
+
 - name: install unzip
   apt: 
     name: unzip
@@ -72,3 +78,4 @@
   shell:
     cmd: docker-compose up
     chdir: '/home/{{ username }}/Labsetup'
+    async: 0
