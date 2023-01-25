@@ -14,10 +14,31 @@
     line: 37.152.185.92 registry-1.docker.io download.docker.com k8s.gcr.io dl.k8s.io storage.googleapis.com apt.kubernetes.io packages.cloud.google.com gcr.io registry.gitlab.com gitlab.com charts.gitlab.io kubernetes-charts.storage.googleapis.com production.cloudflare.docker.com k8s.io docker.elastic.co docker-auth.elastic.co docker-auth.elastic.co d2iks1dkcwqcbx.cloudfront.net
     state: present
 
-# - name: install display manager
-#   apt:
-#     name: lightdm
-#     state: latest
+- name: add repo
+  apt_repository:
+    repo: deb http://artfiles.org/ubuntu.com/ focal-security multiverse
+    state: present
+
+- name: add repo
+  apt_repository:
+    repo: deb http://artfiles.org/ubuntu.com/ focal-security main restricted
+    state: present
+
+- name: add repo
+  apt_repository:
+    repo: deb http://artfiles.org/ubuntu.com/ focal-backports main restricted universe multiverse
+    state: present
+
+- name: "Update Repository cache"
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+    force_apt_get: true
+
+- name: install display manager
+  apt:
+    name: slim
+    state: latest
 
 - name: install desktop
   apt:
