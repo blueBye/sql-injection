@@ -22,7 +22,7 @@
 - name: install desktop
   apt:
     name: ubuntu-desktop
-    staet: latest
+    state: latest
 
 # - name: reboot
 #   reboot:
