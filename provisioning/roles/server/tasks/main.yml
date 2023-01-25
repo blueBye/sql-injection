@@ -14,19 +14,19 @@
     line: 37.152.185.92 registry-1.docker.io download.docker.com k8s.gcr.io dl.k8s.io storage.googleapis.com apt.kubernetes.io packages.cloud.google.com gcr.io registry.gitlab.com gitlab.com charts.gitlab.io kubernetes-charts.storage.googleapis.com production.cloudflare.docker.com k8s.io docker.elastic.co docker-auth.elastic.co docker-auth.elastic.co d2iks1dkcwqcbx.cloudfront.net
     state: present
 
-- name: install display manager
-  apt:
-    name: lightdm
-    state: latest
+# - name: install display manager
+#   apt:
+#     name: lightdm
+#     state: latest
 
 - name: install desktop
   apt:
     name: ubuntu-desktop
     staet: latest
 
-- name: reboot
-  reboot:
-    reboot_timeout: 120
+# - name: reboot
+#   reboot:
+#     reboot_timeout: 120
 
 # - name: install docker packages
 #   apt:
