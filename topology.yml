@@ -1,7 +1,31 @@
 name: sql-injection-training
 
 hosts:
-  - name: server
+  - name: team1
+    base_box: 
+      image: ubuntu-focal-x86_64
+      man_user: ubuntu
+    flavor: standard.small
+
+  - name: team2
+    base_box: 
+      image: ubuntu-focal-x86_64
+      man_user: ubuntu
+    flavor: standard.small
+
+  - name: team3
+    base_box: 
+      image: ubuntu-focal-x86_64
+      man_user: ubuntu
+    flavor: standard.small
+
+  - name: team4
+    base_box: 
+      image: ubuntu-focal-x86_64
+      man_user: ubuntu
+    flavor: standard.small
+
+  - name: team5
     base_box: 
       image: ubuntu-focal-x86_64
       man_user: ubuntu
@@ -20,9 +44,26 @@ networks:
     accessible_by_user: False
 
 net_mappings:
-    - host: server
+    - host: team1
       network: server-switch
       ip: 192.168.20.5
+
+    - host: team2
+      network: server-switch
+      ip: 192.168.20.6
+
+    - host: team3
+      network: server-switch
+      ip: 192.168.20.7
+
+    - host: team4
+      network: server-switch
+      ip: 192.168.20.8
+
+    - host: team5
+      network: server-switch
+      ip: 192.168.20.9
+
 
 router_mappings:
     - router: router

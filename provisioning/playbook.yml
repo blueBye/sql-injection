@@ -33,7 +33,11 @@
 
 - name: Setting up Lab
   hosts:
-    - server
+    - team1
+    - team2
+    - team3
+    - team4
+    - team5
   become: yes
   tasks:    
     - include_role:
