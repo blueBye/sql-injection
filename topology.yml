@@ -3,7 +3,7 @@ name: sql-injection-training
 hosts:
   - name: team1
     base_box: 
-      image: test2-snapshot
+      image: base-snapshot
       man_user: ubuntu
     flavor: standard.small
 
