@@ -1,0 +1,36 @@
+---
+- name: create account
+  user:
+    name: '{{ username }}'
+    groups: 'sudo'
+    append: yes
+    password: '{{ password }}'
+    shell: '/bin/bash'
+    home: '/home/{{ username }}'
+
+- name: add user to docker group
+  user:
+    name: '{{ username }}'
+    groups: 'docker'
+    append: yes
+
+- name: add server url
+  lineinfile:
+    path: /etc/hosts
+    line: 10.9.0.5 www.seed-server.com
+    state: present
+
+- name: copy and unzip
+  unarchive:
+    src: 'files/Labsetup.zip'
+    dest: '/home/{{ username }}/'
+    owner: '{{ username }}'
+    mode: '777'
+    copy: true
+
+- name: installing webservice
+  shell:
+    cmd: docker-compose up
+    chdir: '/home/{{ username }}/Labsetup'
+  async: 120
+  poll: 0

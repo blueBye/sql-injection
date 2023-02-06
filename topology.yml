@@ -6,6 +6,16 @@ hosts:
       image: base
       man_user: ubuntu
     flavor: standard.small
+  - name: team2
+    base_box: 
+      image: base
+      man_user: ubuntu
+    flavor: standard.small
+  - name: team3
+    base_box: 
+      image: base
+      man_user: ubuntu
+    flavor: standard.small
 
 routers:
   - name: router
@@ -23,6 +33,12 @@ net_mappings:
     - host: team1
       network: server-switch
       ip: 192.168.20.5
+    - host: team2
+      network: server-switch
+      ip: 192.168.20.6
+    - host: team3
+      network: server-switch
+      ip: 192.168.20.7
 
 router_mappings:
     - router: router
