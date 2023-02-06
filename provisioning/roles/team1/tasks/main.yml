@@ -24,7 +24,7 @@
   unarchive:
     src: 'files/Labsetup.zip'
     dest: '/home/{{ username }}/'
-    owner: trainee
+    owner: '{{ username }}'
     mode: '777'
     copy: true
 
