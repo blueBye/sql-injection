@@ -3,17 +3,17 @@ name: sql-injection-training
 hosts:
   - name: team1
     base_box: 
-      image: base
+      image: base-ubuntu-desktop
       man_user: ubuntu
     flavor: standard.small
   - name: team2
     base_box: 
-      image: base
+      image: base-ubuntu-desktop
       man_user: ubuntu
     flavor: standard.small
   - name: team3
     base_box: 
-      image: base
+      image: base-ubuntu-desktop
       man_user: ubuntu
     flavor: standard.small
 
