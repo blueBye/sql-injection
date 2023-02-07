@@ -5,17 +5,17 @@ hosts:
     base_box: 
       image: base-ubuntu-desktop
       man_user: ubuntu
-    flavor: m1.small
+    flavor: m1.medium
   - name: team2
     base_box: 
       image: base-ubuntu-desktop
       man_user: ubuntu
-    flavor: m1.small
+    flavor: m1.medium
   - name: team3
     base_box: 
       image: base-ubuntu-desktop
       man_user: ubuntu
-    flavor: m1.small
+    flavor: m1.medium
 
 routers:
   - name: router
